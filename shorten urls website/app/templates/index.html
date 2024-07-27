@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Link Shortener</h1>
+        <form action="/" method="post" id="url-form">
+            <label for="url">Enter URL:</label>
+            <input type="url" id="url" name="url" required placeholder="https://example.com">
+            <button type="submit">Shorten</button>
+        </form>
+        {% if short_code %}
+        <div id="output">
+            <p><strong>Long URL:</strong> <a href="{{ original_url }}" target="_blank">{{ original_url }}</a></p>
+            <p><strong>Short URL:</strong> <a href="{{ url_for('redirect_to_url', short_code=short_code) }}" target="_blank">{{ request.host_url }}{{ short_code }}</a></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

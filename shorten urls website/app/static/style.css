@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1c1c1c; /* Dark background color */
+    color: #fff; /* White text color */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1); /* White with glass effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box; /* Include padding in width */
+    overflow: hidden; /* Prevents content overflow */
+    word-wrap: break-word; /* Break long words/URLs */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Center the form elements */
+    align-items: center;
+    gap: 10px; /* Adds space between elements */
+    margin-bottom: 20px;
+}
+
+label {
+    flex: 1 0 100%; /* Takes full width on small screens */
+    text-align: left;
+}
+
+input[type="url"], button {
+    flex: 1 1 auto; /* Allow input and button to grow and shrink */
+    margin: 5px 0; /* Margin to ensure spacing */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="url"] {
+    flex-grow: 2; /* Make the input field take more space */
+    min-width: 200px; /* Minimum width for input */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#output {
+    margin-top: 20px;
+    word-wrap: break-word; /* Ensures long URLs don't overflow */
+}
+
+#output p {
+    margin: 5px 0;
+}
+
+#output a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#output a:hover {
+    text-decoration: underline;
+}
